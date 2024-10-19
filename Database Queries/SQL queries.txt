@@ -1,0 +1,112 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 32
+Server version: 8.0.36 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| college            |
+| db                 |
+| employee           |
+| employee_directory |
+| indexex            |
+| information_schema |
+| joins              |
+| myhiber            |
+| mysql              |
+| performance_schema |
+| practice           |
+| practice1          |
+| records            |
+| sakila             |
+| sales              |
+| uniondemo          |
++--------------------+
+16 rows in set (0.00 sec)
+
+mysql> CREATE DATABASE registration_db;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> USE registration_db;
+Database changed
+mysql> CREATE TABLE Registration (
+    ->     ID INT AUTO_INCREMENT PRIMARY KEY,
+    ->     Name VARCHAR(100) NOT NULL,
+    ->     Email VARCHAR(100) UNIQUE NOT NULL,
+    ->     DateOfBirth DATE NOT NULL
+    -> );
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> desc Registration;
++-------------+--------------+------+-----+---------+----------------+
+| Field       | Type         | Null | Key | Default | Extra          |
++-------------+--------------+------+-----+---------+----------------+
+| ID          | int          | NO   | PRI | NULL    | auto_increment |
+| Name        | varchar(100) | NO   |     | NULL    |                |
+| Email       | varchar(100) | NO   | UNI | NULL    |                |
+| DateOfBirth | date         | NO   |     | NULL    |                |
++-------------+--------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
+mysql> select * from Registration;
++----+-------+-------------------+-------------+
+| ID | Name  | Email             | DateOfBirth |
++----+-------+-------------------+-------------+
+|  2 | Priti | priti@example.com | 1994-04-04  |
++----+-------+-------------------+-------------+
+1 row in set (0.00 sec)
+
+mysql> select * from Registration;
++----+--------+--------------------+-------------+
+| ID | Name   | Email              | DateOfBirth |
++----+--------+--------------------+-------------+
+|  2 | Priti  | priti@example.com  | 1994-04-04  |
+|  3 | Pratik | pratik@example.com | 1998-01-01  |
+|  4 | Suraj  | suraj@example.com  | 1995-05-05  |
+|  6 | Mohan  | Mohan@example.com  | 1998-01-01  |
++----+--------+--------------------+-------------+
+4 rows in set (0.00 sec)
+
+mysql> select * from Registration;
++----+--------+--------------------+-------------+
+| ID | Name   | Email              | DateOfBirth |
++----+--------+--------------------+-------------+
+|  2 | Priti  | priti@example.com  | 1994-04-04  |
+|  3 | Pratik | pratik@example.com | 1998-01-01  |
+|  4 | Suraj  | suraj@example.com  | 1995-05-05  |
+|  6 | Mohan  | Mohan@example.com  | 1998-01-01  |
++----+--------+--------------------+-------------+
+4 rows in set (0.00 sec)
+
+mysql> select * from Registration;
++----+--------+--------------------+-------------+
+| ID | Name   | Email              | DateOfBirth |
++----+--------+--------------------+-------------+
+|  2 | Pawan  | pawan@example.com  | 1994-05-12  |
+|  3 | Pratik | pratik@example.com | 1998-01-01  |
+|  4 | Suraj  | suraj@example.com  | 1995-05-05  |
+|  6 | Mohan  | Mohan@example.com  | 1998-01-01  |
++----+--------+--------------------+-------------+
+4 rows in set (0.00 sec)
+
+mysql> select * from Registration;
++----+--------+--------------------+-------------+
+| ID | Name   | Email              | DateOfBirth |
++----+--------+--------------------+-------------+
+|  3 | Pratik | pratik@example.com | 1998-01-01  |
+|  4 | Suraj  | suraj@example.com  | 1995-05-05  |
+|  6 | Mohan  | Mohan@example.com  | 1998-01-01  |
++----+--------+--------------------+-------------+
+3 rows in set (0.00 sec)
+
+mysql>
